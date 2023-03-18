@@ -12,6 +12,7 @@ a{text-decoration:none; color:#000;}
 @mixin point($a){color:rgb(223, 46, 56, $a)}
 $point:#DF2E38;
 $serif:'Noto Serif KR', serif;
+$mont:'Montserrat', sans-serif;
 
 @mixin respond-basic{
     @media(max-width:1520px){@content;}
@@ -35,7 +36,7 @@ header{width:100%; position:fixed; top:0; left:0; z-index:99; padding:30px 0;
     }
     @include respond-basic{width:calc(100% - 15px)}
 }
-.fix-con{display:flex; align-items:center; gap:10px; position:fixed; z-index:99; writing-mode:vertical-lr; font-size:16px; font-weight:bold; color:rgba(255,255,255, .5);
+.fix-con{display:flex; align-items:center; gap:10px; position:fixed; z-index:99; writing-mode:vertical-lr; font-size:16px; font-weight:bold; color:#fff;
     span{width:20px; height:20px; display:block; position:relative; border:1px solid rgba(255,255,255, .5); border-radius:50%;
         &::before{content:""; width:100%; height:100%; position:absolute; left:-10px; top:-9px; border:1px solid rgba(255,255,255, .5); border-left:0; border-top:0;}
     }
@@ -45,7 +46,7 @@ header{width:100%; position:fixed; top:0; left:0; z-index:99; padding:30px 0;
 
 .all-menu{width:100%; height:100%; position:fixed; z-index:100; opacity:0; visibility:hidden; background:#eee;
     .back-txt{width:100%; height:100%; position:absolute; top:0; padding:120px 0 0 0; 
-        h1{display:flex; align-items:center; justify-content:center; margin:0 0 0 -60px; font-size:20vw; font-family:'Montserrat', sans-serif; letter-spacing:-24px;
+        h1{display:flex; align-items:center; justify-content:center; margin:0 0 0 -60px; font-size:20vw; font-family:$mont; letter-spacing:-24px;
             .plus{width:200px; height:200px; display:flex; align-items:center; justify-content:center; position:relative;
                 &::before, &::after{content:""; position:absolute;}
                 &::before{width:100%; height:50px; background:#fff;}
@@ -60,29 +61,77 @@ header{width:100%; position:fixed; top:0; left:0; z-index:99; padding:30px 0;
 
 .container_wide{overflow:hidden; // background:url(/img/image-from-rawpixel-id-6241602-png.png) center no-repeat; background-size:cover; background-attachment:fixed;
     .section01{height:100vh; position:relative; margin-bottom:360px;
-        .back-txt{width:100%; height:100%; position:absolute;
-            h1{display:flex; position:relative; -webkit-text-stroke:1px rgba(255,255,255, .5); font-size:34vw; color:transparent; letter-spacing:-34px; -webkit-background-clip:text;
-                span{display:block; }
-            }
-        }
         &-inner{@include comm;
-            .txt-box{display:flex; align-items:center; justify-content:flex-start;
-                h1{line-height:1; display:flex; position:relative; z-index:5; transform:rotate(180deg); writing-mode:vertical-lr; font-size:250px; font-family:$serif; color:#fff; letter-spacing:-17px;
+            .txt-box{display:flex; align-items:center; justify-content:flex-start; position:relative;
+                h1{line-height:1; display:flex; position:relative; z-index:5; transform:rotate(180deg); writing-mode:vertical-lr; font-size:250px; font-family:$mont; color:#fff; letter-spacing:-17px;
                     span{display:block; position:relative;
                         &:first-child{font-size:300px;}
-                        &::before, &::after{content:attr(data-text); position:absolute; top:0; -webkit-text-stroke:1px rgba(255,255,255, .3); font-size:inherit; color:transparent; -webkit-background-clip:text; letter-spacing:0;}
+                        &::before, &::after{content:attr(data-text); position:absolute; top:0; -webkit-text-stroke:1px rgba(255,255,255, .5); font-size:inherit; color:transparent; -webkit-background-clip:text; letter-spacing:0;}
                         &::before{left:-32%; z-index:-1;}
-                        &::after{left:-64%; -webkit-text-stroke:1px rgba(223, 46, 56, .3);}
-                    }   
+                        &::after{left:-64%; z-index:-2; -webkit-text-stroke:1px rgba(223, 46, 56, .5);}
+                    }  
+                    &::after{content:""; width:10px; height:105%; position:absolute; left:-16px; bottom:97%; background:#fff;}
                 }
-                p{margin-left:250px; font-size:50px; font-family:$serif; color:#fff;}
+                p{margin-left:250px; font-size:50px; font-family:$mont; font-weight:500; color:#fff;}
+                &::after{content:""; width:calc(100% - 850px); height:20px; position:absolute; right:0; background:$point;}
             }
         }
     }
     .section02{height:100vh; position:relative;
-        .back-txt{position:absolute; font-size:250px; font-family:$serif; color:$point;}
-        &-inner{@include comm; height:100%; display:flex; flex-flow:column; align-items:center; justify-content:center; gap:150px;
-            
+        .back-txt{width:100%; height:100%; position:relative;
+            & > div:first-child{
+                h1{line-height:1; position:relative; font-size:445px; font-family:$mont; font-weight:bold; color:rgba(255,255,255, .2);
+                    &::after{content:""; width:100%; height:10px; position:absolute; bottom:63px; background:rgba(255,255,255, .2);}
+                }
+            }
+            .line-wrap{width:100%; height:100%; display:flex; position:absolute; top:0; padding:0 0 0 60px;
+                span{display:block;}
+                .line{height:100%; display:flex; flex-flow:column; position:relative;
+                    &-1{justify-content:flex-end; align-items:center;
+                        span{
+                            &:first-child{width:1px; height:400px; order:3; background:rgba(255,255,255, .2);}
+                            &:nth-child(2){width:10px; height:100px; background:#fff;}
+                            &:last-child{width:5px; height:80px; margin:100px 0 200px; background:#fff;}
+                        }
+                    }
+                    &-2{justify-content:space-between; margin-left:50px;
+                        span{
+                            &:first-child{width:1px; height:500px; background:#fff;}
+                            &:nth-child(2){width:1px; height:250px; background:rgba(255,255,255, .5);}
+                            &:last-child{width:1px; height:50px; background:rgba(255,255,255, .2);}
+                        }
+                    }
+                    &-3{align-items:center; justify-content:flex-end; gap:10px; margin-left:100px;
+                        span{
+                            &:first-child{width:5px; height:30px; background:#fff;}
+                            &:last-child{width:2px; height:15px; background:rgba(255,255,255, .5)}
+                        }
+                    }
+                    &-4{justify-content:flex-end; gap:50px; margin-left:50px;
+                        span{
+                            &:first-child{width:1px; height:400px; background:rgba(255,255,255, .2);}
+                            &:nth-child(2){width:1px; height:100px; background:rgba(255,255,255, .5)}
+                            &:nth-child(3){width:1px; height:50px; background:rgba(255,255,255, .7)}
+                            &:last-child{width:1px; height:10px; background:#fff}
+                        }
+                    }
+                }
+            }
+        }
+        &-inner{@include comm; height:100%; display:flex; flex-flow:column; align-items:center; justify-content:center; gap:150px; position:absolute; top:0; left:50%; transform:translateX(-50%);
+            .txt-box{width:100%; height:100%;
+                .left{width:100%; height:100%; display:flex; align-items:center; gap:31px; font-family:$mont; color:#fff;
+                    ul{display:flex; gap:30px; writing-mode:vertical-lr; font-size:20px;
+                        &:first-child{transform:scaleY(-1) scaleX(-1); margin:0 0 0 272px; padding:0 0 150px 0}
+                        li{position:relative;
+                            &::after{content:""; width:5px; height:5px; position:absolute; right:11px; bottom:-18px; background:$point; border-radius:50%;}
+                            &:last-child{
+                                &::after{display:none;}
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
