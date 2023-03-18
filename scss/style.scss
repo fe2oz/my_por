@@ -1,0 +1,61 @@
+@charset 'urf-8';
+
+body{padding:0; margin:0; background:#eee;}
+*{padding:0; margin:0;}
+ul, ol{list-style:none}
+a{text-decoration:none; color:#000;}
+
+/****** 공통 적용 ******/
+@mixin comm{width:1520px; margin:0 auto; position:relative;}
+
+/****** 폰트 ******/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;400;600;900&display=swap');
+
+
+/****** 섹션 시작 ******/
+
+header{width:100%; position:fixed; top:0; left:0; z-index:99; padding:30px 0; 
+    .header-inner{@include comm;
+        .menu-btn{width:25px; height:auto; display:flex; flex-flow:column; gap:6px; margin:0 auto; margin-right:0; cursor:pointer;
+            span{width:100%; height:2px; display:block; background:#000;
+                &:nth-child(2){width:calc(100% - 8px)}
+            }
+        }
+    }
+}
+
+.fix-con{display:flex; position:fixed;
+    span{width:20px; height:20px; display:block; position:relative; border:1px solid rgba(0,0,0, .5); border-radius:50%;
+        &::before, &::after{content:""; width:100%; height:100%; position:absolute; border:1px solid rgba(0,0,0, .5);}
+        &::before{border-left:0; border-top:0;}
+        &::after{border-right:0; border-bottom:0;}
+    }
+    &.top-fix{left:30px; top:30px;}
+    &.bot-fix{right:30px; bottom:30px;}
+}
+
+.container_wide{overflow:hidden; background:url(/img/image-from-rawpixel-id-6241602-png.png) center no-repeat; background-size:cover; background-attachment:fixed;
+    .section01{height:100vh; position:relative;
+        .back-txt{width:100%; height:100%; position:absolute;
+            h1{display:flex; position:relative; -webkit-text-stroke:1px rgba(0,0,0, .5); font-size:34vw; color:transparent; letter-spacing:-34px; -webkit-background-clip:text;
+                span{display:block; }
+            }
+        }
+        &-inner{@include comm;
+            .txt-box{display:flex; align-items:center; justify-content:flex-start;
+                h1{line-height:1; display:flex; position:relative; z-index:5; transform:rotate(180deg); writing-mode:vertical-lr; font-size:250px; font-family:'Montserrat', sans-serif; letter-spacing:-17px;
+                    span{display:block; position:relative;
+                        &:first-child{font-size:300px;}
+                        &::before, &::after{content:attr(data-text); position:absolute; top:0; -webkit-text-stroke:1px rgba(0,0,0, .3); font-size:inherit; color:transparent; -webkit-background-clip:text; letter-spacing:0;}
+                        &::before{left:-32%; z-index:-1;}
+                        &::after{left:-64%; -webkit-text-stroke:1px rgba(0,0,0, .1);}
+                    }   
+                }
+                p{margin-left:250px; font-size:50px; font-family:'Noto Serif KR', serif;}
+            }
+        }
+    }
+    .section02{height:100vh;}
+}

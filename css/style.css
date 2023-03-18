@@ -1,0 +1,196 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;400;600;900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  background: #eee;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/****** 공통 적용 ******/
+/****** 폰트 ******/
+/****** 섹션 시작 ******/
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: 30px 0;
+}
+header .header-inner {
+  width: 1520px;
+  margin: 0 auto;
+  position: relative;
+}
+header .header-inner .menu-btn {
+  width: 25px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 6px;
+  margin: 0 auto;
+  margin-right: 0;
+  cursor: pointer;
+}
+header .header-inner .menu-btn span {
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #000;
+}
+header .header-inner .menu-btn span:nth-child(2) {
+  width: calc(100% - 8px);
+}
+
+.fix-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+}
+.fix-con span {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+.fix-con span::before, .fix-con span::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.fix-con span::before {
+  border-left: 0;
+  border-top: 0;
+}
+.fix-con span::after {
+  border-right: 0;
+  border-bottom: 0;
+}
+.fix-con.top-fix {
+  left: 30px;
+  top: 30px;
+}
+.fix-con.bot-fix {
+  right: 30px;
+  bottom: 30px;
+}
+
+.container_wide {
+  overflow: hidden;
+  background: url(/img/image-from-rawpixel-id-6241602-png.png) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container_wide .section01 {
+  height: 100vh;
+  position: relative;
+}
+.container_wide .section01 .back-txt {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.container_wide .section01 .back-txt h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  font-size: 34vw;
+  color: transparent;
+  letter-spacing: -34px;
+  -webkit-background-clip: text;
+}
+.container_wide .section01 .back-txt h1 span {
+  display: block;
+}
+.container_wide .section01-inner {
+  width: 1520px;
+  margin: 0 auto;
+  position: relative;
+}
+.container_wide .section01-inner .txt-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.container_wide .section01-inner .txt-box h1 {
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 5;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-size: 250px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -17px;
+}
+.container_wide .section01-inner .txt-box h1 span {
+  display: block;
+  position: relative;
+}
+.container_wide .section01-inner .txt-box h1 span:first-child {
+  font-size: 300px;
+}
+.container_wide .section01-inner .txt-box h1 span::before, .container_wide .section01-inner .txt-box h1 span::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+  font-size: inherit;
+  color: transparent;
+  -webkit-background-clip: text;
+  letter-spacing: 0;
+}
+.container_wide .section01-inner .txt-box h1 span::before {
+  left: -32%;
+  z-index: -1;
+}
+.container_wide .section01-inner .txt-box h1 span::after {
+  left: -64%;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+}
+.container_wide .section01-inner .txt-box p {
+  margin-left: 250px;
+  font-size: 50px;
+  font-family: "Noto Serif KR", serif;
+}
+.container_wide .section02 {
+  height: 100vh;
+}
