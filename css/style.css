@@ -66,7 +66,17 @@ header .header-inner .menu-btn span:nth-child(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
   position: fixed;
+  z-index: 99;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-size: 16px;
+  font-weight: bold;
 }
 .fix-con span {
   width: 20px;
@@ -76,20 +86,16 @@ header .header-inner .menu-btn span:nth-child(2) {
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
-.fix-con span::before, .fix-con span::after {
+.fix-con span::before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
+  left: -10px;
+  top: -9px;
   border: 1px solid rgba(0, 0, 0, 0.5);
-}
-.fix-con span::before {
   border-left: 0;
   border-top: 0;
-}
-.fix-con span::after {
-  border-right: 0;
-  border-bottom: 0;
 }
 .fix-con.top-fix {
   left: 30px;
@@ -98,6 +104,76 @@ header .header-inner .menu-btn span:nth-child(2) {
 .fix-con.bot-fix {
   right: 30px;
   bottom: 30px;
+  -webkit-transform: scaleX(-1) scaleY(-1) translateZ(0);
+          transform: scaleX(-1) scaleY(-1) translateZ(0);
+}
+
+.all-menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  background: #eee;
+}
+.all-menu .back-txt {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 120px 0 0 0;
+}
+.all-menu .back-txt h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0 0 -60px;
+  font-size: 20vw;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -24px;
+}
+.all-menu .back-txt h1 .plus {
+  width: 200px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+.all-menu .back-txt h1 .plus::before, .all-menu .back-txt h1 .plus::after {
+  content: "";
+  position: absolute;
+}
+.all-menu .back-txt h1 .plus::before {
+  width: 100%;
+  height: 50px;
+  background: #000;
+}
+.all-menu .back-txt h1 .plus::after {
+  width: 50px;
+  height: 100%;
+  background: #000;
+}
+.all-menu .back-txt h1 p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.all-menu .back-txt h1 p span {
+  display: block;
 }
 
 .container_wide {
@@ -158,7 +234,7 @@ header .header-inner .menu-btn span:nth-child(2) {
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
   font-size: 250px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Serif KR", serif;
   letter-spacing: -17px;
 }
 .container_wide .section01-inner .txt-box h1 span {
@@ -193,4 +269,29 @@ header .header-inner .menu-btn span:nth-child(2) {
 }
 .container_wide .section02 {
   height: 100vh;
+}
+.container_wide .section02-inner {
+  width: 1520px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container_wide .section02-inner h1 {
+  position: absolute;
+  font-size: 14vw;
+  font-family: "Noto Serif KR", serif;
+  font-weight: bold;
+}
+.container_wide .section02-inner .txt {
+  position: relative;
 }
