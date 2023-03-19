@@ -75,13 +75,41 @@ header{width:100%; position:fixed; top:0; left:0; z-index:99; padding:30px 0;
                 p{margin-left:250px; font-size:50px; font-family:$mont; font-weight:500; color:#fff;}
                 &::after{content:""; width:calc(100% - 850px); height:20px; position:absolute; right:0; background:$point;}
             }
+            .con-box{width:50%; display:grid; grid-template-columns:repeat(3,1fr); position:absolute; top:50%; right:-10%; transform:translateY(-50%); 
+                li{height:250px; position:relative; counter-increment:li-counter; overflow:hidden;
+                    span{display:block;}
+                    &::before{content:counter(li-counter, decimal-leading-zero); position:absolute; left:0; top:0; font-family:$mont; color:#fff}
+                    &.square{display:flex; flex-flow:column; justify-content:space-between;
+                        span{width:calc(100% - 50px); height:20px; background:#fff;
+                            &:first-child{width:20px; height:20px; margin:0 auto; margin-right:20px;}
+                            &:last-child{margin:0 0 20px 0;}
+                        }
+                    }
+                    &.line{display:flex; justify-content:space-evenly;
+                        span{width:1px; height:100%; transform:rotate(15deg); background:$point;}
+                    }
+                    &.x{
+                        span{width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:relative; margin:20px 0 0 0; overflow:hidden;
+                            &::before, &::after{content:""; width:calc(100% - 200px); height:100%; position:absolute; background:$point;}
+                            &::before{transform:rotate(45deg)}
+                            &::after{transform:rotate(-45deg)}
+                        }
+                    }
+                    &.dot{display:grid; grid-template-columns:repeat(5,1fr);
+                        span{width:5px; height:5px; margin:30px 0 0 3px; background:#fff; border-radius:50%;}
+                    }
+                }
+            }
         }
     }
     .section02{height:100vh; position:relative;
         .back-txt{width:100%; height:100%; position:relative;
             & > div:first-child{
-                h1{line-height:1; position:relative; font-size:445px; font-family:$mont; font-weight:bold; color:rgba(255,255,255, .2);
-                    &::after{content:""; width:100%; height:10px; position:absolute; bottom:63px; background:rgba(255,255,255, .2);}
+                h1{line-height:1; position:relative; font-size:555px; font-family:$mont; font-weight:bold; color:rgba(255,255,255, .2);
+                    &::after{content:""; width:100%; height:10px; position:absolute; bottom:80px; background:rgba(255,255,255, .2);}
+                }
+                & > div{display:flex; position:absolute; top:34%; right:30%; 
+                    p span{font-size:300px; font-family:"Montserrat", sans-serif; font-weight:bold; color:rgba(255, 255, 255, 0.1); letter-spacing:-19px;}
                 }
             }
             .line-wrap{width:100%; height:100%; display:flex; position:absolute; top:0; padding:0 0 0 60px;
