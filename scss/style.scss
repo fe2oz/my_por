@@ -186,18 +186,32 @@ header{width:100%; position:fixed; top:0; left:0; z-index:99; padding:30px 0;
         .line-wrap{width:100%; height:100%; display:flex; position:absolute;
             span{display:block;}
             & > div{flex:1;}
-            .left{display:flex; flex-flow:column; justify-content:space-between;
+            .left{flex:0.6; display:flex; flex-flow:column; justify-content:space-between;
                 .top{
                     .fir{width:500px; height:250px; display:flex; justify-content:flex-end; gap:20px; margin:0 auto; margin-right:0; margin-bottom:50px;
                         span{width:1px; height:100%; transform:rotate(15deg); background:$point}
                     }
-                    .sec{display:flex; align-items:center;
-                        span{
-                            &:first-child{width:10px; height:10px; background:#fff;}
-                            &:nth-child(2){width:calc(100% - 250px); height:1px; margin:0 80px 0 50px; background:rgba(255,255,255, .7);}
-                            &:nth-child(3){width:20px; height:1px; background:rgba(255,255,255, .5)}
-                            &:last-child{width:4px; height:4px; margin:0 0 0 83px; background:rgba(255,255,255, .3); border-radius:50%;}
-                        } 
+                    .sec{display:flex; flex-flow:column; align-items:center; position:relative;
+                        & > div{width:100%;}
+                        & > div:first-child{display:flex; align-items:center;
+                            span{
+                                &:first-child{width:10px; height:10px; background:#fff;}
+                                &:nth-child(2){width:calc(100% - 250px); height:1px; margin:0 80px 0 50px; background:rgba(255,255,255, .7);}
+                                &:nth-child(3){width:20px; height:1px; background:rgba(255,255,255, .5)}
+                                &:last-child{width:4px; height:4px; margin:0 0 0 83px; background:rgba(255,255,255, .3); border-radius:50%;}
+                            } 
+                        }
+                        & > div:last-child{line-height:1; display:flex; position:absolute; top:64px; right:-191px; text-transform:uppercase;
+                            p{font-family:$mont; font-weight:bold;
+                                &:first-child{margin:-14px 0 0 118px; font-size:100px; color:#fff;
+                                    span{margin:0 0 0 21px; font-size:16px; font-weight:400;}
+                                }
+                                &:last-child{display:flex; position:absolute;
+                                    span{position:relative; font-size:180px; color:rgba(255,255,255, .2); letter-spacing:-9px;}
+                                }
+                            }
+                            
+                        }
                     }
                 }
                 .mid{padding-bottom:100px;
