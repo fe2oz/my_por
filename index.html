@@ -242,13 +242,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="right"></div>
+                <div class="right">
+                    <div class="top">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="mid">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="bot">
+                        <div><span></span><span></span></div>
+                        <div><span></span></div>
+                        
+                    </div>
+                </div>
             </div>
             <div class="section03-inner swiper-container">
                 <div class="swiper-wrapper">
-                    <div clsas="swiper-slide">
-                        dsdfszgsdgdgfg
+                    <div class="swiper-slide">
+                        <div class="img-box"></div>
+                        <p>한국팩키지</p>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="img-box"></div>
+                        <p>혜안</p>
+                    </div>
+                </div>
+                <div class="sc03_arrow">
+                    <div class="swiper-button-prev"><span></span></div>
+                    <div class="swiper-button-next"><span></span></div>
                 </div>
             </div>
         </section>
@@ -257,8 +282,13 @@
     <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9.1.1/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper('.section03-inner', {
+        var swiper = new Swiper('.section03-inner.swiper-container', {
             slidesPerView:1,
+            navigation:{
+                prevEl:'.swiper-button-prev',
+                nextEl:'.swiper-button-next',
+            },
+            speed:500,
         });
     </script>
 </body>
