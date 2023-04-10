@@ -293,7 +293,7 @@ header .header-inner .menu-btn span:nth-child(2) {
   grid-template-columns: repeat(3, 1fr);
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -10%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -748,7 +748,7 @@ header .header-inner .menu-btn span:nth-child(2) {
       -ms-flex-align: center;
           align-items: center;
   margin: 91px 0 0;
-  border: 50px solid rgb(223, 46, 56);
+  border: 50px solid rgba(223, 46, 56, 0.3);
 }
 .container_wide .section03 {
   height: 100vh;
